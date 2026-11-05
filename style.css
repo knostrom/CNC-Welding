@@ -263,7 +263,7 @@ h2 span {
 }
 
 .section-heading .eyebrow,
-.services .eyebrow {
+.contact .eyebrow {
   margin-bottom: 16px;
 }
 
@@ -295,15 +295,26 @@ h2 {
   overflow: hidden;
 }
 
-.project--placeholder {
-  aspect-ratio: 4 / 3;
-}
-
 .project img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 450ms ease;
+}
+
+.project--feature img {
+  height: 360px;
+}
+
+/* To restore varied card heights, comment out lines 310-318. */
+#gallery-content .project {
+  display: flex;
+  flex-direction: column;
+}
+
+#gallery-content .project img {
+  flex: none;
+  height: 300px;
 }
 
 .project:hover img {
@@ -329,6 +340,10 @@ h2 {
   color: var(--paper);
 }
 
+.project--feature figcaption {
+  background: var(--panel);
+}
+
 .project__number {
   color: var(--blue);
   font-size: 9px;
@@ -351,12 +366,12 @@ h2 {
   color: #126a95;
 }
 
-.services {
+.contact {
   padding: 82px 10.4%;
   background: var(--panel);
 }
 
-.services__inner {
+.contact__inner {
   display: flex;
   align-items: end;
   justify-content: space-between;
@@ -365,33 +380,40 @@ h2 {
   margin: 0 auto;
 }
 
-.services h2 {
+.contact h2 {
   font-size: clamp(38px, 4.7vw, 58px);
 }
 
-.service-list {
+.contact-list {
   min-width: min(100%, 300px);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.service-list li {
+.contact-list li {
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: space-between;
+  gap: 24px;
   padding: 14px 0;
   border-bottom: 1px solid var(--rule);
   font-size: 13px;
 }
 
-.service-list li:first-child {
+.contact-list li:first-child {
   border-top: 1px solid var(--rule);
 }
 
-.service-list li span {
+.contact-list li > span:first-child {
   color: var(--blue);
-  font-size: 9px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.contact-list__value {
+  color: var(--muted);
+  text-align: right;
 }
 
 .site-footer {
@@ -500,14 +522,18 @@ h2 {
     height: 270px;
   }
 
-  .services {
+  .contact {
     padding: 68px 8%;
   }
 
-  .services__inner {
+  .contact__inner {
     align-items: start;
     flex-direction: column;
     gap: 32px;
+  }
+
+  .contact-list {
+    width: 100%;
   }
 }
 
@@ -532,13 +558,6 @@ h2 {
     grid-template-columns: 1fr;
     gap: 18px;
   }
-
-.project img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 450ms ease;
-}
 
   .project--tall img {
     height: clamp(230px, 72vw, 360px);
