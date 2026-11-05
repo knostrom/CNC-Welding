@@ -57,8 +57,8 @@ img {
 }
 
 .brand img {
-  width: 56px;
-  height: 36px;
+  width: 116px;
+  height: 96px;
   object-fit: contain;
 }
 
@@ -108,6 +108,8 @@ img {
   gap: 7%;
   min-height: 620px;
   padding: 76px 10.4% 92px;
+  background: #fff;
+  color: var(--ink);
   overflow: hidden;
 }
 
@@ -128,6 +130,12 @@ img {
   letter-spacing: 0.17em;
   line-height: 1.6;
   text-transform: uppercase;
+}
+
+.hero .eyebrow,
+.hero h1 span,
+.hero__note span {
+  color: #126a95;
 }
 
 .eyebrow__line {
@@ -165,7 +173,7 @@ h2 span {
 .hero__intro {
   max-width: 380px;
   margin: 24px 0 28px;
-  color: #c0c1c0;
+  color: #62676a;
   font-size: 15px;
   line-height: 1.8;
 }
@@ -193,14 +201,13 @@ h2 span {
 
 .hero__note {
   margin: 38px 0 0;
-  color: var(--muted);
+  color: #62676a;
   font-size: 10px;
   letter-spacing: 0.07em;
 }
 
 .hero__note span {
   padding: 0 8px;
-  color: var(--blue);
 }
 
 .hero__image {
@@ -213,7 +220,7 @@ h2 span {
   position: absolute;
   z-index: -1;
   inset: 29px 0 0 0;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--ink);
   content: "";
 }
 
@@ -236,15 +243,6 @@ h2 span {
 .hero__image figcaption span {
   margin-right: 12px;
   color: var(--blue);
-}
-
-.hero__index {
-  position: absolute;
-  right: 7.1%;
-  bottom: 42px;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 0.1em;
 }
 
 .section-wrap {
@@ -295,6 +293,10 @@ h2 {
   margin: 0;
   background: var(--panel);
   overflow: hidden;
+}
+
+.project--placeholder {
+  aspect-ratio: 4 / 3;
 }
 
 .project img {
@@ -473,11 +475,6 @@ h2 {
 
   .hero__image img {
     height: clamp(260px, 64vw, 390px);
-  }
-
-  .hero__index {
-    bottom: 29px;
-    right: 8%;
   }
 
   .section-wrap {
