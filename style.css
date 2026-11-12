@@ -307,7 +307,7 @@ h2 {
 }
 
 /* To restore varied card heights, comment out lines 310-318. */
-#gallery-content .project {
+/* #gallery-content .project {
   display: flex;
   flex-direction: column;
 }
@@ -315,7 +315,7 @@ h2 {
 #gallery-content .project img {
   flex: none;
   height: 300px;
-}
+} */
 
 .project:hover img {
   transform: scale(1.035);
