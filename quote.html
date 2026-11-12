@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Request a custom welding or fabrication quote from CNC Welding & Fabrication.">
+    <title>Request a Quote | CNC Welding &amp; Fabrication</title>
+    <link rel="icon" type="image/png" href="cnc_logo_2000px.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .quote-page {
+        min-height: 70vh;
+        padding: 72px 7.1%;
+        background: var(--ink);
+      }
+
+      .quote-wrap {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+        gap: clamp(32px, 7vw, 100px);
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .quote-intro {
+        max-width: 360px;
+      }
+
+      .quote-intro h1 {
+        margin: 0 0 20px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(42px, 5vw, 64px);
+        font-weight: 400;
+        letter-spacing: -0.055em;
+        line-height: 1.05;
+      }
+
+      .quote-intro h1 span {
+        color: var(--blue);
+      }
+
+      .quote-intro p:last-child {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .quote-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .quote-field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .quote-field--full {
+        grid-column: 1 / -1;
+      }
+
+      .quote-field label {
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .quote-field input,
+      .quote-field select,
+      .quote-field textarea {
+        width: 100%;
+        border: 1px solid var(--rule);
+        border-radius: 0;
+        padding: 13px 14px;
+        background: var(--panel);
+        color: var(--paper);
+        font: inherit;
+      }
+
+      .quote-field textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .quote-field input:focus,
+      .quote-field select:focus,
+      .quote-field textarea:focus {
+        outline: 2px solid var(--blue);
+        outline-offset: 2px;
+      }
+
+      .quote-submit {
+        grid-column: 1 / -1;
+        justify-self: start;
+        border: 0;
+        cursor: pointer;
+      }
+
+      .quote-note {
+        grid-column: 1 / -1;
+        margin: -8px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 700px) {
+        .quote-page {
+          padding: 48px 7.1%;
+        }
+
+        .quote-wrap {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .quote-form {
+          grid-template-columns: 1fr;
+        }
+
+        .quote-field,
+        .quote-field--full,
+        .quote-submit,
+        .quote-note {
+          grid-column: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="CNC Welding & Fabrication home">
+        <img src="cnc_logo_2000px.png" alt="">
+        <span>CNC <span class="brand__sub">Welding &amp; Fabrication</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Project Gallery</a>
+        <a class="nav-cta" href="quote.html">Get a Quote</a>
+      </nav>
+    </header>
+
+    <main class="quote-page">
+      <div class="quote-wrap">
+        <section class="quote-intro" aria-labelledby="quote-title">
+          <p class="eyebrow"><span class="eyebrow__line"></span> Tell us what you have in mind</p>
+          <h1 id="quote-title">Let&rsquo;s plan your <span>project.</span></h1>
+          <p>
+            Share a few details about your project, such as a metal fence,
+            railing, repair, or custom fabrication. We&rsquo;ll follow up to
+            discuss the next steps.
+          </p>
+        </section>
+
+        <form class="quote-form" id="quote-form">
+          <div class="quote-field">
+            <label for="name">Your name *</label>
+            <input id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="quote-field">
+            <label for="email">Email address *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="quote-field">
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+
+          <div class="quote-field">
+            <label for="service">Type of project *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a project type</option>
+              <option>Fence or gate</option>
+              <option>Railing</option>
+              <option>Repair</option>
+              <option>Custom fabrication</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="quote-field quote-field--full">
+            <label for="location">Project location (city or ZIP code) *</label>
+            <input id="location" name="location" autocomplete="address-level2" required>
+          </div>
+
+          <div class="quote-field">
+            <label for="dimensions">Approximate dimensions</label>
+            <input id="dimensions" name="dimensions" placeholder="For example: 40 ft long, 6 ft high">
+          </div>
+
+          <div class="quote-field">
+            <label for="timeline">Desired timeline</label>
+            <input id="timeline" name="timeline" placeholder="For example: this summer">
+          </div>
+
+          <div class="quote-field quote-field--full">
+            <label for="details">Project details *</label>
+            <textarea id="details" name="details" placeholder="Describe what you need, materials or style preferences, and any other helpful details." required></textarea>
+          </div>
+
+          <button class="button quote-submit" type="submit">
+            Send quote request <span aria-hidden="true">→</span>
+          </button>
+
+          <p class="quote-note">
+            Submitting opens Gmail with your request ready to send. You must be signed in and send the email yourself.
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand brand--footer" href="index.html" aria-label="CNC Welding & Fabrication home">
+        <img src="cnc_logo_2000px.png" alt="">
+        <span>CNC <span class="brand__sub">Welding &amp; Fabrication</span></span>
+      </a>
+      <p>Made with purpose. Built to last.</p>
+      <a class="back-to-top" href="#">Back to top ↑</a>
+    </footer>
+
+    <script>
+      document.getElementById("quote-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const labels = {
+          name: "Name",
+          email: "Email",
+          phone: "Phone",
+          service: "Project type",
+          location: "Project location",
+          dimensions: "Approximate dimensions",
+          timeline: "Desired timeline",
+          details: "Project details"
+        };
+        const body = Array.from(formData.entries())
+          .map(([key, value]) => `${labels[key]}: ${value || "Not provided"}`)
+          .join("\n");
+
+        // Replace this address with your business email.
+        const recipient = "client@example.com";
+        const gmailUrl = new URL("https://mail.google.com/mail/");
+        gmailUrl.searchParams.set("view", "cm");
+        gmailUrl.searchParams.set("fs", "1");
+        gmailUrl.searchParams.set("to", recipient);
+        gmailUrl.searchParams.set("su", "Test Quote request - " + formData.get("service")); // this does need to be changed to "Quote Request - " but I am testing the email functionality first
+        gmailUrl.searchParams.set("body", body);
+        window.location.href = gmailUrl.toString();
+      });
+    </script>
+  </body>
+</html>
