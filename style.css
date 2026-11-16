@@ -587,3 +587,186 @@ h2 {
 .project figcaption span.project__name {
   display: block; margin-bottom: 0;
 }
+
+.site-settings {
+  position: fixed;
+  z-index: 20;
+  right: 22px;
+  bottom: 22px;
+}
+
+.settings-button {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--paper);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.settings-button svg {
+  width: 25px;
+  height: 25px;
+  fill: currentColor;
+}
+
+.settings-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 12px);
+  width: max-content;
+  min-width: 220px;
+  padding: 8px 16px;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  color: var(--paper);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.settings-menu[hidden] {
+  display: none;
+}
+
+.settings-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 13px 0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.settings-option + .settings-option {
+  border-top: 1px solid var(--rule);
+}
+
+.settings-option input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #111416;
+  --panel: #1b1f22;
+  --paper: #f5f5f2;
+  --muted: #d2d6d8;
+  --blue: #6bcaff;
+  --rule: rgba(240, 238, 233, 0.3);
+}
+
+:root[data-theme="dark"] .hero {
+  background: var(--panel);
+  color: var(--paper);
+}
+
+:root[data-theme="dark"] .hero .eyebrow,
+:root[data-theme="dark"] .hero h1 span,
+:root[data-theme="dark"] .hero__note span {
+  color: #8edbff;
+}
+
+:root[data-theme="dark"] .hero__intro,
+:root[data-theme="dark"] .hero__note,
+:root[data-theme="dark"] .section-heading__text,
+:root[data-theme="dark"] .gallery-note {
+  color: #d2d6d8;
+}
+
+:root[data-theme="dark"] .work {
+  background: #15191b;
+  color: var(--paper);
+}
+
+:root[data-theme="dark"] .contact {
+  background: #303438;
+}
+
+:root[data-contrast="high"] {
+  --muted: #fff;
+  --blue: #005f87;
+  --rule: rgba(255, 255, 255, 0.65);
+}
+
+:root[data-contrast="high"][data-theme="dark"] {
+  --blue: #8edbff;
+  --rule: rgba(255, 255, 255, 0.55);
+}
+
+:root[data-contrast="high"] .work .eyebrow,
+:root[data-contrast="high"] .work h2 span {
+  color: #00557b;
+}
+
+:root[data-contrast="high"] .work .section-heading__text,
+:root[data-contrast="high"] .work .gallery-note {
+  color: #343a3e;
+}
+
+:root[data-contrast="high"][data-theme="dark"] .work .section-heading__text,
+:root[data-contrast="high"][data-theme="dark"] .work .gallery-note {
+  color: #f5f5f2;
+}
+
+:root[data-contrast="high"] .project__number,
+:root[data-contrast="high"] .contact .eyebrow,
+:root[data-contrast="high"] .contact h2 span,
+:root[data-contrast="high"] .contact-list li > span:first-child,
+:root[data-contrast="high"] .quote-page h1 span {
+  color: #8edbff;
+}
+
+:root[data-contrast="high"][data-theme="dark"] .work .eyebrow,
+:root[data-contrast="high"][data-theme="dark"] .work h2 span,
+:root[data-contrast="high"][data-theme="dark"] .project__number,
+:root[data-contrast="high"][data-theme="dark"] .contact .eyebrow,
+:root[data-contrast="high"][data-theme="dark"] .contact h2 span,
+:root[data-contrast="high"][data-theme="dark"] .contact-list li > span:first-child,
+:root[data-contrast="high"][data-theme="dark"] .quote-page h1 span {
+  color: #8edbff;
+}
+
+:root[data-contrast="high"] .contact-list__value,
+:root[data-contrast="high"] .site-footer {
+  color: #fff;
+}
+
+:root[data-contrast="high"] .button {
+  background: #65c8f5;
+  color: #101518;
+}
+
+:root[data-contrast="high"] .site-nav a:hover,
+:root[data-contrast="high"] .back-to-top:hover {
+  color: #8edbff;
+}
+
+:root[data-contrast="high"] .settings-button,
+:root[data-contrast="high"] .settings-menu {
+  border-width: 2px;
+}
+
+:root[data-contrast="high"] .settings-option input {
+  accent-color: #8edbff;
+}
+
+:root[data-contrast="high"] :focus-visible {
+  outline-width: 3px;
+  outline-color: #ffea00;
+}
+
+@media (max-width: 520px) {
+  .site-settings {
+    right: 16px;
+    bottom: 16px;
+  }
+}
