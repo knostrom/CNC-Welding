@@ -43,7 +43,11 @@ img {
 }
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   min-height: 88px;
+  background: var(--ink);
   border-bottom: 1px solid var(--rule);
 }
 
