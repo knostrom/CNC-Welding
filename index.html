@@ -21,10 +21,12 @@
     <a class="nav-cta" href="index.html">Home</a>
     <a href="gallery.html">Project Gallery</a>
     <a href="quote.html">Get a Quote</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
     <main>
+      <!-- hero section exclusive to the home page -->
       <section class="hero" id="home" aria-labelledby="hero-title">
         <div class="hero__copy">
           <p class="eyebrow"><span class="eyebrow__line"></span> CNC Welding &amp; Fabrication</p>
@@ -44,6 +46,7 @@
         </figure>
       </section>
 
+      <!-- work section i.e. a tiny snippet of the project gallery -->
       <section class="work section-wrap" id="work" aria-labelledby="work-title">
         <div class="section-heading">
           <div>
@@ -72,21 +75,27 @@
             </figcaption>
           </figure>
         </div>
-
-        <!-- <p class="gallery-note">Have more project photos? Add another <code>&lt;figure class="project"&gt;</code> to this gallery.</p> -->
+        <div class="section-action">
+          <a class="button" href="gallery.html">View more projects <span aria-hidden="true">→</span></a>
+        </div>
       </section>
 
+      <!-- contact section a tiny snippet of the contact page -->
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="contact__inner">
           <div>
             <p class="eyebrow"><span class="eyebrow__line"></span> Have a project in mind?</p>
             <h2 id="contact-title">Let&rsquo;s talk about<br>your <span>project.</span></h2>
           </div>
-          <ul class="contact-list">
-            <li><span>Phone</span><span class="contact-list__value">Add phone number</span></li>
-            <li><span>Email</span><span class="contact-list__value">Add email address</span></li>
-            <li><span>Location</span><span class="contact-list__value">Add city or service area</span></li>
-          </ul>
+          <div class="contact__details">
+            <ul class="contact-list">
+              <li><span>Phone</span><a class="contact-list__value" href="tel:+18018362896">(801) 836-2896</a></li>
+              <li><span>Email</span><a class="contact-list__value" href="mailto:cncweldingfab@gmail.com">cncweldingfab@gmail.com</a></li>
+              <li><span>Location</span><span class="contact-list__value">Proudly serving Utah</span></li>
+            </ul>
+            <a class="button" href="quote.html">Get a Quote <span aria-hidden="true">→</span></a>
+            <a class="contact__more" href="contact.html">More contact details <span aria-hidden="true">→</span></a>
+          </div>
         </div>
       </section>
     </main>
