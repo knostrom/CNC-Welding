@@ -745,9 +745,10 @@ h2 {
   color: var(--paper);
 }
 
-:root[data-theme="dark"] .contact {
+/* commented out becuase it looks better with the dark theme, but can be uncommented if needed */
+/* :root[data-theme="dark"] .contact {
   background: #303438;
-}
+} */
 
 :root[data-contrast="high"] {
   --muted: #fff;
@@ -762,7 +763,7 @@ h2 {
 
 :root[data-contrast="high"] .work .eyebrow,
 :root[data-contrast="high"] .work h2 span {
-  color: #00557b;
+  color: #006b91;
 }
 
 :root[data-contrast="high"] .work .section-heading__text,
@@ -776,9 +777,11 @@ h2 {
 }
 
 :root[data-contrast="high"] .project__number,
+:root[data-contrast="high"] .hero__image figcaption span,
 :root[data-contrast="high"] .contact .eyebrow,
 :root[data-contrast="high"] .contact h2 span,
 :root[data-contrast="high"] .contact-list li > span:first-child,
+:root[data-contrast="high"] .quote-page .eyebrow,
 :root[data-contrast="high"] .quote-page h1 span {
   color: #8edbff;
 }
