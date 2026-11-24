@@ -13,27 +13,66 @@ document.body.append(lightbox);
 const lightboxImage = lightbox.querySelector(".image-lightbox__image");
 const lightboxCaption = lightbox.querySelector(".image-lightbox__caption");
 
+function openLightbox(src, alt, caption) {
+  lightboxImage.src = src;
+  lightboxImage.alt = alt;
+  lightboxCaption.textContent = caption;
+  lightbox.showModal();
+}
+
 document.querySelectorAll("main .hero__image img, main .project img").forEach((image) => {
   image.classList.add("image-lightbox__trigger");
   image.tabIndex = 0;
   image.setAttribute("role", "button");
   image.setAttribute("aria-label", `View larger image: ${image.alt}`);
 
-  function openLightbox() {
-    lightboxImage.src = image.currentSrc || image.src;
-    lightboxImage.alt = image.alt;
-    lightboxCaption.textContent = image.closest("figure")?.querySelector("figcaption")?.textContent.trim() || image.alt;
-    lightbox.showModal();
-  }
-
-  image.addEventListener("click", openLightbox);
+  const caption = image.closest("figure")?.querySelector("figcaption")?.textContent.trim() || image.alt;
+  image.addEventListener("click", () => openLightbox(image.currentSrc || image.src, image.alt, caption));
   image.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      openLightbox();
+      openLightbox(image.currentSrc || image.src, image.alt, caption);
     }
   });
 });
+
+const businessCardLink = document.querySelector("[data-business-card]");
+if (businessCardLink) {
+  const businessCardStorageKey = "cnc-business-card-downloaded";
+  let downloadAlreadyTriggered = false;
+
+  try {
+    downloadAlreadyTriggered = localStorage.getItem(businessCardStorageKey) === "true";
+  } catch (error) {
+    console.error("Unable to check whether the business card was previously downloaded.", error);
+  }
+
+  businessCardLink.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    if (!downloadAlreadyTriggered) {
+      downloadAlreadyTriggered = true;
+      const downloadLink = document.createElement("a");
+      downloadLink.href = businessCardLink.href;
+      downloadLink.download = businessCardLink.download;
+      document.body.append(downloadLink);
+      downloadLink.click();
+      downloadLink.remove();
+
+      try {
+        localStorage.setItem(businessCardStorageKey, "true");
+      } catch (error) {
+        console.error("Unable to save the business card download status.", error);
+      }
+    }
+
+    openLightbox(
+      businessCardLink.href,
+      "CNC Welding & Fabrication business card",
+      "CNC Welding & Fabrication business card"
+    );
+  });
+}
 
 lightbox.querySelector(".image-lightbox__close").addEventListener("click", () => {
   lightbox.close();
